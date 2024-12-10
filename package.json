@@ -6,7 +6,8 @@
     "dev": "cross-env webpack --mode development",
     "build": "cross-env webpack --mode production --progress",
     "sass-min": "sass ./src/scss:./public/css --style compressed",
-    "init": "live-server --open=."
+    "init": "live-server --open=.",
+    "serve": "http-server . -p 8484 -a localhost"
   },
   "repository": {
     "type": "git",
@@ -31,16 +32,13 @@
     "jsonp": "^0.2.1",
     "mini-css-extract-plugin": "^2.9.2",
     "postcss-loader": "^8.1.1",
-    "sass": "^1.81.0",
-    "sass-loader": "^14.2.1",
+    "sass": "^1.82.0",
+    "sass-loader": "^16.0.4",
     "style-loader": "^4.0.0",
     "terser-webpack-plugin": "^5.3.10",
     "webpack": "^5.96.1",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^5.1.0",
     "webpack-obfuscator": "^3.5.1"
-  },
-  "dependencies": {
-    "http-server": "^14.1.1"
   }
 }
