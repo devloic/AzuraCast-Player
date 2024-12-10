@@ -14,7 +14,7 @@ import _config from "./js/config";
 // import jsonp from "jsonp";
 
 // main vue app
-new Vue({
+var vm = new Vue({
   el: "#app",
   data: {
     // toggles
@@ -223,9 +223,10 @@ new Vue({
         this.playChannel(this.station);
       }
     },
-    apiBaseUrl(){
-     return _config.apiBaseUrl;  
+    apiBaseUrls() {
+      return _config.apiBaseUrls;
     },
+
     // show/hide the sidebar
     toggleSidebar(toggle) {
       const state = typeof toggle === "boolean" ? toggle : false;
@@ -354,6 +355,40 @@ new Vue({
         this.updateCurrentChannel();
         this.applyRoute(window.location.hash, sidebar);
       });
+    },
+
+    setChannel(shortcode) {
+      location = "#/station/" + shortcode;
+      _api.getChannels((err, stations) => {
+        if (err) return this.setError("stations", err);
+        this.stations = stations;
+        this.clearError("stations");
+        this.updateCurrentChannel();
+        this.applyRoute(location, sidebar);
+      });
+    },
+    onAzuracastOpenStation() {
+      var apiBaseUrls = _config.apiBaseUrls;
+      var location = window.location;
+      var hostnames = new Array();
+      var url;
+      var apiBaseUrl;
+
+      for (apiBaseUrl of apiBaseUrls) {
+        url = new URL(apiBaseUrl);
+        hostnames.push(url.hostname);
+      }
+      if (hostnames.includes(location.hostname)) {
+        if (location.pathname.startsWith('/public/')) {
+          var elements = location.pathname.split("/");
+          var channel = elements[elements.length - 1];
+          //console.log("ON AzuraCast");
+          this.setChannel(channel);
+        }
+
+      } else {
+        //console.log("not on azuracast");
+      }
     },
 
     // get songs list for a station from api
@@ -671,3 +706,4 @@ new Vue({
     this.clearTimers();
   },
 });
+vm.onAzuracastOpenStation();

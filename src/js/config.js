@@ -1,3 +1,3 @@
 export default {
-  apiBaseUrl: 'https://s1.cloudmu.id'
+  apiBaseUrls: ['https://radio.lolo.asia','https://radioct.cheztim.com'],
 }

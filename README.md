@@ -32,8 +32,7 @@ git clone https://github.com/PeWe79/AzuraCast-Player.git
 Edit the configuration AzuraCast server. Open the [config.js](https://github.com/PeWe79/AzuraCast-Player/blob/main/src/js/config.js) file and edit the line below :
 
 ```javascript
-apiBaseUrl: 'https://your-azuracast-server.com'
-
+apiBaseUrls: ['https://your-azuracast-server.com'','https://your-azuracast-other-domain.com'']
 ```
 
 #### Image Branding
