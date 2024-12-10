@@ -9,6 +9,8 @@ import _audio from "./js/audio";
 import _scene from "./js/scene";
 import _utils from "./js/utils";
 import _store from "./js/store";
+import _config from "./js/config";
+
 // import jsonp from "jsonp";
 
 // main vue app
@@ -221,7 +223,9 @@ new Vue({
         this.playChannel(this.station);
       }
     },
-
+    apiBaseUrl(){
+     return _config.apiBaseUrl;  
+    },
     // show/hide the sidebar
     toggleSidebar(toggle) {
       const state = typeof toggle === "boolean" ? toggle : false;
