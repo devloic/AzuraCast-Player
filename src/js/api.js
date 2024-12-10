@@ -55,7 +55,7 @@ export default {
   _parseChannels(station) {
     let output = [];
     var randomNumber = Math.floor(Math.random() * 5);
-    let fileName = ".jpg";
+    let fileName = ".png";
     let extension = fileName.split("/").pop();
     if (Array.isArray(station)) {
       for (let c of station) {
@@ -69,7 +69,7 @@ export default {
         c.updated = c.updated | 0;
         c.favorite = false;
         c.active = false;
-        c.imgLogo = config.apiBaseUrl + '/static/uploads/' + c.shortcode + '/' + 'album_art.' + randomNumber + extension;
+        c.imgLogo = config.apiBaseUrl + '/static/uploads/' + c.shortcode + '/' + 'album_art.'  + randomNumber + extension;
         output.push(c);
       }
     }
