@@ -56,6 +56,11 @@ npm run init
 ```
 npm run build
 ```
+#### host app
+```
+npm install http-server 
+http-server . -p 8484 -a localhost
+```
 
 ## Supported Cover Artworks
 * iTunes
