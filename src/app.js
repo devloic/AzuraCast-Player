@@ -367,29 +367,7 @@ var vm = new Vue({
         this.applyRoute(location, sidebar);
       });
     },
-    onAzuracastOpenStation() {
-      var apiBaseUrls = _config.apiBaseUrls;
-      var location = window.location;
-      var hostnames = new Array();
-      var url;
-      var apiBaseUrl;
-
-      for (apiBaseUrl of apiBaseUrls) {
-        url = new URL(apiBaseUrl);
-        hostnames.push(url.hostname);
-      }
-      if (hostnames.includes(location.hostname)) {
-        if (location.pathname.startsWith('/public/')) {
-          var elements = location.pathname.split("/");
-          var channel = elements[elements.length - 1];
-          //console.log("ON AzuraCast");
-          this.setChannel(channel);
-        }
-
-      } else {
-        //console.log("not on azuracast");
-      }
-    },
+   
 
     // get songs list for a station from api
     getSongs(station, cb) {
@@ -706,4 +684,3 @@ var vm = new Vue({
     this.clearTimers();
   },
 });
-vm.onAzuracastOpenStation();
