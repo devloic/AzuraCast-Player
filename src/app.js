@@ -223,8 +223,8 @@ var vm = new Vue({
         this.playChannel(this.station);
       }
     },
-    apiBaseUrls() {
-      return _config.apiBaseUrls;
+    apiBaseUrl() {
+      return _config.apiBaseUrl;
     },
 
     // show/hide the sidebar
@@ -357,16 +357,6 @@ var vm = new Vue({
       });
     },
 
-    setChannel(shortcode) {
-      location = "#/station/" + shortcode;
-      _api.getChannels((err, stations) => {
-        if (err) return this.setError("stations", err);
-        this.stations = stations;
-        this.clearError("stations");
-        this.updateCurrentChannel();
-        this.applyRoute(location, sidebar);
-      });
-    },
    
 
     // get songs list for a station from api

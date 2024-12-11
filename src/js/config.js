@@ -1,3 +1,3 @@
 export default {
-  apiBaseUrls: ['https://radio.lolo.asia','https://radioct.cheztim.com'],
+  apiBaseUrl: 'https://radioct.cheztim.com',
 }
