@@ -224,7 +224,7 @@ var vm = new Vue({
       }
     },
     apiBaseUrl() {
-      var hostname = _config.apiBaseUrl != '' ? _config.apiBaseUrl : window.location.hostname;
+      var hostname = _config.apiBaseUrl != '' ? _config.apiBaseUrl : 'http://' + window.location.hostname;
       return hostname;
     },
 
