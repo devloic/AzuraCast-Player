@@ -224,7 +224,8 @@ var vm = new Vue({
       }
     },
     apiBaseUrl() {
-      return _config.apiBaseUrl;
+      var hostname = _config.apiBaseUrl != '' ? _config.apiBaseUrl : window.location.hostname;
+      return hostname;
     },
 
     // show/hide the sidebar

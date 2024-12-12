@@ -5,10 +5,15 @@
 import config from './config';
 
 export default {
+  
+  getAzuracastHostname(){
+    var hostname = config.apiBaseUrl != '' ? config.apiBaseUrl : window.location.hostname;
+    return hostname;
+  },
 
   // get station data from api
   getChannels(callback) {
-    const apiurl = config.apiBaseUrl + '/api/stations';
+    const apiurl = getAzuracastHostname() + '/api/stations';
     const error = 'There was a problem fetching the latest list of music channels from AzuraCast.';
 
     axios.get(apiurl).then(res => {
@@ -61,7 +66,7 @@ export default {
       for (let c of station) {
         c.plsfile = c.playlist_pls_url;
         c.mp3file = c.listen_url;
-        c.songsurl = config.apiBaseUrl + '/api/nowplaying/' + c.id;
+        c.songsurl = getAzuracastHostname() + '/api/nowplaying/' + c.id;
         c.infourl = c.url;
         c.twitter = c.twitter ? 'https://twitter.com/@' + c.twitter : '';
         c.route = '/station/' + c.shortcode;
@@ -69,7 +74,7 @@ export default {
         c.updated = c.updated | 0;
         c.favorite = false;
         c.active = false;
-        c.imgLogo = config.apiBaseUrl + '/static/uploads/' + c.shortcode + '/' + 'album_art.'  + randomNumber + extension;
+        c.imgLogo = getAzuracastHostname() + '/static/uploads/' + c.shortcode + '/' + 'album_art.'  + randomNumber + extension;
         output.push(c);
       }
     }
