@@ -1,3 +1,3 @@
 export default {
-  apiBaseUrl: '',
+  apiBaseUrl: 'https://radio.lolo.asia',
 }
