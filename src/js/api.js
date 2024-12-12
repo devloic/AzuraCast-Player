@@ -7,7 +7,7 @@ import config from './config';
 export default {
   
   getAzuracastHostname(){
-    var hostname = config.apiBaseUrl != '' ? config.apiBaseUrl : window.location.hostname;
+    var hostname = config.apiBaseUrl != '' ? config.apiBaseUrl : "http://" + window.location.hostname;
     return hostname;
   },
 
