@@ -59,6 +59,7 @@ export default {
   // parse station list from api response
   _parseChannels(station) {
     let output = [];
+    var randomNumber = Math.floor(Math.random() * 5);
     let fileName = ".png";
     let extension = fileName.split("/").pop();
     if (Array.isArray(station)) {
@@ -73,7 +74,7 @@ export default {
         c.updated = c.updated | 0;
         c.favorite = false;
         c.active = false;
-        c.imgLogo = this.getAzuracastHostname() + '/static/uploads/' + c.shortcode + '/' + 'album_art.' + extension;
+        c.imgLogo = this.getAzuracastHostname() + '/static/uploads/' + c.shortcode + '/' + 'album_art.'  + randomNumber + extension;
         output.push(c);
       }
     }
