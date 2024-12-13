@@ -73,7 +73,7 @@ export default {
         c.updated = c.updated | 0;
         c.favorite = false;
         c.active = false;
-        c.imgLogo = this.getAzuracastHostname() + '/static/uploads/' + c.shortcode + '/' + 'album_art.' + extension;
+        c.imgLogo = this.getAzuracastHostname() + '/static/uploads/' + c.shortcode + '/' + 'album_art' + extension;
         output.push(c);
       }
     }
