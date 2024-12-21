@@ -7,6 +7,13 @@
 [vue]: https://github.com/vuejs/vue
 [node]: https://nodejs.org/
 
+## This is a slightly modified version of [azuracast-player](https://github.com/PeWe79/AzuraCast-Player) 
+## with small improvements that works embeded in azuracast as an alternative to the default player 
+
+<br/>
+<br/>
+<br/>
+
 ## Fully Modified SomaFM Music Player as AzuraCast Player
 This is a fully modified version of SomaFM Music Player from [rainner/soma-fm-player](https://github.com/rainner/soma-fm-player) as AzuraCast Radio Player.
 
